@@ -3,7 +3,7 @@ name: ClamAV Build Test
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build-windows-x64:
