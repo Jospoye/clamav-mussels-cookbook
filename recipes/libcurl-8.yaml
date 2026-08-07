@@ -36,8 +36,7 @@ platforms:
             -D OPENSSL_SSL_LIBRARY="{libs}/libssl.3.dylib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.1.dylib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.dylib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.dylib" \
@@ -55,7 +54,6 @@ platforms:
       dependencies:
         - libopenssl>=3.0
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -83,8 +81,7 @@ platforms:
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.a" \
             -D ZLIB_USE_STATIC_LIBS=ON \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.a" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.a" \
@@ -102,7 +99,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -128,8 +124,7 @@ platforms:
             -D OPENSSL_SSL_LIBRARY="{libs}/libssl.so.3" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.so" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.so" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.so" \
@@ -147,7 +142,6 @@ platforms:
       dependencies:
         - libopenssl>=3.0
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -173,8 +167,7 @@ platforms:
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.a" \
             -D ZLIB_USE_STATIC_LIBS=ON \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.a" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.a" \
@@ -193,7 +186,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -218,8 +210,7 @@ platforms:
             -D OPENSSL_SSL_LIBRARY="{libs}/libssl.so.3" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.so" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.so" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.so" \
@@ -237,7 +228,6 @@ platforms:
       dependencies:
         - libopenssl>=3.0
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -264,8 +254,7 @@ platforms:
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/libz.a" \
             -D ZLIB_USE_STATIC_LIBS=ON \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.a" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/libnghttp2.a" \
@@ -284,7 +273,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -309,8 +297,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -328,7 +315,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -351,8 +337,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -370,7 +355,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -393,8 +377,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -412,7 +395,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -435,8 +417,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -454,7 +435,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -477,8 +457,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -496,7 +475,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -519,8 +497,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -538,7 +515,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -561,8 +537,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -580,7 +555,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
@@ -603,8 +577,7 @@ platforms:
             -D SSL_EAY_RELEASE="{libs}/libssl.lib" \
             -D ZLIB_INCLUDE_DIR="{includes}" \
             -D ZLIB_LIBRARY="{libs}/zs.lib" \
-            -D LIBSSH2_INCLUDE_DIR="{includes}" \
-            -D LIBSSH2_LIBRARY="{libs}/libssh2.lib" \
+            -D CURL_USE_LIBSSH2=OFF \
             -D USE_NGHTTP2=ON \
             -D NGHTTP2_INCLUDE_DIR="{includes}" \
             -D NGHTTP2_LIBRARY="{libs}/nghttp2.lib" \
@@ -622,7 +595,6 @@ platforms:
       dependencies:
         - libopenssl
         - libnghttp2>=1.0.0
-        - libssh2
         - libz
       install_paths:
         license/libcurl:
