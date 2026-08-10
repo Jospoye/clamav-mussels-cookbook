@@ -40,7 +40,7 @@ platforms:
         - ncurses
 
   # ========== 新增：musl 交叉编译支持 ==========
-  Linux-host-musl-x86_64:
+  host-musl-x86_64:
     dependencies:
       - libbz2
       - libjson_c
@@ -62,7 +62,7 @@ platforms:
       - cmake
       - perl
 
-  Linux-host-musl-aarch64:
+  host-musl-aarch64:
     dependencies:
       - libbz2
       - libjson_c
