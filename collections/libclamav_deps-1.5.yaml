@@ -1,4 +1,4 @@
-# Copyright (C) 2021 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
+# Copyright (C) 2020 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ platforms:
     host:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
@@ -29,15 +30,66 @@ platforms:
     host-static:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libcheck
+        - ncurses
+
+  # ========== 新增：musl 交叉编译支持 ==========
+  Linux-host-musl-x86_64:
+    dependencies:
+      - libbz2
+      - libjson_c
+      - libopenssl
+      - libxml2
+      - libpcre2
+      - libz
+      - libiconv
+      - ncurses
+      - libcheck
+      - libcurl
+      - libnghttp2
+    install_paths:
+      license/clamav_deps:
+        - README.md
+    required_tools:
+      - make
+      - gcc
+      - cmake
+      - perl
+
+  Linux-host-musl-aarch64:
+    dependencies:
+      - libbz2
+      - libjson_c
+      - libopenssl
+      - libxml2
+      - libpcre2
+      - libz
+      - libiconv
+      - ncurses
+      - libcheck
+      - libcurl
+      - libnghttp2
+    install_paths:
+      license/clamav_deps:
+        - README.md
+    required_tools:
+      - make
+      - gcc
+      - cmake
+      - perl
+  # ==========================================
+
   Freebsd:
     host:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
@@ -46,52 +98,42 @@ platforms:
     host-static:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libcheck
+        - ncurses
   Darwin:
     host:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libcheck
+        - ncurses
     host-static:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - libxml2
         - libopenssl
         - libpcre2
         - libbz2<1.1.0
+        - libcheck
+        - ncurses
   Windows:
-    arm:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
-    arm64:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
     x64:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - pthreads_win32
         - libxml2
@@ -99,9 +141,11 @@ platforms:
         - libpcre2
         - libbz2<1.1.0
         - pdcurses
+        - libcheck
     x86:
       dependencies:
         - libz
+        - libcurl
         - libjson_c
         - pthreads_win32
         - libxml2
@@ -109,43 +153,4 @@ platforms:
         - libpcre2
         - libbz2<1.1.0
         - pdcurses
-    arm-debug:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
-    arm64-debug:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
-    x64-debug:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
-    x86-debug:
-      dependencies:
-        - libz
-        - libjson_c
-        - pthreads_win32
-        - libxml2
-        - libopenssl
-        - libpcre2
-        - libbz2<1.1.0
-        - pdcurses
+        - libcheck
