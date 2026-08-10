@@ -99,46 +99,43 @@ platforms:
       required_tools:
         - make
         - gcc
+
+    # ========== 新增：musl 交叉编译支持 ==========
+    host-musl-x86_64:
+      build_script:
+        make: |
+          make CFLAGS="-fPIC" CC=x86_64-linux-musl-gcc
+        install: |
+          make install PREFIX={install} CC=x86_64-linux-musl-gcc
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - LICENSE
+      required_tools:
+        - make
+        - x86_64_linux_musl_gcc
+
+    host-musl-aarch64:
+      build_script:
+        make: |
+          make CFLAGS="-fPIC" CC=aarch64-linux-musl-gcc
+        install: |
+          make install PREFIX={install} CC=aarch64-linux-musl-gcc
+      dependencies: []
+      install_paths:
+        license/libbz2:
+          - LICENSE
+      required_tools:
+        - make
+        - aarch64_linux_musl_gcc
+    # ==========================================
+
   Windows:
-    arm:
-      build_script:
-        make: |
-          CALL vcvarsall.bat amd64_arm
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
-    arm64:
-      build_script:
-        make: |
-          CALL vcvarsall.bat amd64_arm64
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
     x64:
       build_script:
         make: |
           CALL vcvarsall.bat amd64
-          CALL nmake -f makefile.msc dll lib bzip2
+          CALL nmake -f makefile.msc all
       dependencies: []
       install_paths:
         include:
@@ -155,75 +152,7 @@ platforms:
       build_script:
         make: |
           CALL vcvarsall.bat x86
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
-    arm-debug:
-      build_script:
-        make: |
-          CALL vcvarsall.bat amd64_arm
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
-    arm64-debug:
-      build_script:
-        make: |
-          CALL vcvarsall.bat amd64_arm64
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
-    x64-debug:
-      build_script:
-        make: |
-          CALL vcvarsall.bat amd64
-          CALL nmake -f makefile.msc dll lib bzip2
-      dependencies: []
-      install_paths:
-        include:
-          - bzlib.h
-        lib:
-          - libbz2.dll
-          - libbz2.lib
-        license/libbz2:
-          - LICENSE
-      patches: libbz2-1.0-patches
-      required_tools:
-        - visualstudio>=2017
-    x86-debug:
-      build_script:
-        make: |
-          CALL vcvarsall.bat x86
-          CALL nmake -f makefile.msc dll lib bzip2
+          CALL nmake -f makefile.msc all
       dependencies: []
       install_paths:
         include:
